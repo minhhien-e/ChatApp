@@ -1,0 +1,79 @@
+.form {
+  display: none;
+  animation: slideIn 0.5s ease-out;
+}
+
+.form.active {
+  display: block;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.form-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-links a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color .3s;
+}
+
+.form-links a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.form-switch {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.form-switch p {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 10px;
+}
+
+.alert {
+  background: rgba(255,107,107,0.2);
+  border: 1px solid rgba(255,107,107,0.3);
+  color: #ff6b6b;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: none;
+}
+
+.alert.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.success-message {
+  background: rgba(78,205,196,0.2);
+  border: 1px solid rgba(78,205,196,0.3);
+  color: #4ecdc4;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: none;
+}
+
+.success-message.show {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+} 
