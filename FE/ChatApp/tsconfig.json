@@ -13,7 +13,8 @@
       "@utils/*": ["src/utils/*"],
       "@lib/*": ["src/lib/*"],
       "@context/*": ["src/context/*"],
-      "@services/*": ["src/services/*"]
+      "@services/*": ["src/services/*"],
+      "@types": ["src/types/index.ts"]
     }
   }
 }
