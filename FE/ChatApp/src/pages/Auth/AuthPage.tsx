@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import "./AuthPage.css";
 import { useAuthForm } from "@/hooks";
 import {
@@ -10,6 +11,9 @@ import {
 type FormType = "login" | "register" | "forgot";
 
 export const AuthPage: React.FC = () => {
+  const { formType } = useParams<{ formType: FormType }>();
+  const navigate = useNavigate();
+
   const {
     currentForm,
     showPassword,
@@ -24,12 +28,21 @@ export const AuthPage: React.FC = () => {
     handleForgot,
   } = useAuthForm();
 
+
+  useEffect(() => {
+    if (formType === "login" || formType === "register" || formType === "forgot") {
+      showForm(formType);
+    } else {
+      navigate("/auth/login");
+    }
+  }, [formType]);
+
   const handleFormChange = (form: string, field: string, value: string) => {
     handleChange(form as FormType, field, value);
   };
 
   const handleFormSwitch = (form: string) => {
-    showForm(form as FormType);
+    navigate(`/auth/${form}`); 
   };
 
   return (

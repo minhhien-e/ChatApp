@@ -6,7 +6,7 @@ import { Message } from "../../components/feature/chat/Message/Message";
 import { MessageInput } from "../../components/feature/chat/MessageInput";
 import { ChatInfo } from "../../components/feature/chat/ChatInfo";
 import { formatTime, getColor, getInitials } from "../../utils/chat";
-const ChatPage: React.FC = () => {
+export const ChatPage: React.FC = () => {
   const {
     chats,
     currentChatId,
@@ -149,4 +149,3 @@ const ChatPage: React.FC = () => {
   );
 };
 
-export default ChatPage;

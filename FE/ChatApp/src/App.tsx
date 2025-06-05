@@ -1,11 +1,12 @@
 import React from "react";
-import { AuthPage } from "./pages";
-import ChatApp from "./pages/Home/ChatPage";
+import { Route, Routes } from "react-router-dom";
+import { AuthPage, ChatPage } from "./pages";
 const App: React.FC = () => {
   return (
-    <div>
-      <ChatApp />
-    </div>
+    <Routes>
+      <Route path="/auth/:formType" element={<AuthPage />} />
+      <Route path="/" element={<ChatPage />} />
+    </Routes>
   );
 };
 
